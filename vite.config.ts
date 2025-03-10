@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [dts()],
   build: {
     lib: {
+      name: 'index',
       fileName: 'index',
       entry: resolve(__dirname, 'src/index.ts'),
     },
