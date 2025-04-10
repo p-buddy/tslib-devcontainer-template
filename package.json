@@ -23,7 +23,9 @@
 	"scripts": {
 		"build": "vite build",
 		"test": "vitest",
-		"test:run": "vitest run"
+		"test:run": "vitest run",
+		"prepublishOnly": "pnpm test:run && pnpm build && npm version patch --git-tag-version false",
+		"postpublish": "git add ./package.json && git commit -m \"bump version: $(basename $(pwd))\" && git push"
 	},
 	"devDependencies": {
 		"@types/node": "^22.13.10",
